@@ -7,7 +7,8 @@
   <meta name="theme-color" content="#003366" />
   <link rel="icon" type="image/png" href="Image/IITB_logo.png" />
   <title>IIT Bombay-Honeywell Centre for Future Skills & Innovation</title>
-<style>
+
+  <style>
     :root {
       --white: #ffffff;
       --iit-blue: #003366;
@@ -79,6 +80,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 20px;
+      position: relative;
     }
 
     .nav-left {
@@ -543,11 +545,13 @@
       justify-content: center;
     }
 
+    .intro-media iframe,
     .intro-media video {
       width: 100%;
       height: 100%;
       min-height: 280px;
-      object-fit: contain;
+      display: block;
+      border: 0;
       background: #0f1720;
     }
 
@@ -1357,7 +1361,90 @@
       to {opacity:1; transform:scale(1);}
     }
 
+    @media (max-width: 992px) {
+      .navbar {
+        flex-wrap: wrap;
+        padding: 12px 16px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-right {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding-top: 10px;
+      }
+
+      .navbar.mobile-nav-open .nav-right {
+        display: flex;
+      }
+
+      .nav-dropdown {
+        width: 100%;
+        display: block;
+      }
+
+      .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        padding: 6px 0 0;
+        display: none;
+        min-width: 100%;
+      }
+
+      .nav-dropdown.open .dropdown-menu {
+        display: block;
+      }
+
+      .intro-video-container,
+      .outcomes-layout,
+      .premium-updates-layout,
+      .contact-wrap,
+      .focus-row {
+        grid-template-columns: 1fr;
+      }
+
+      .premium-updates-side {
+        grid-template-rows: auto;
+      }
+
+      .outcomes-stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hero-content {
+        padding: 34px 28px 34px 34px;
+      }
+
+      .left-panel {
+        width: 60%;
+      }
+    }
+
     @media (max-width: 768px) {
+      .hero-slider {
+        min-height: 420px;
+        height: 60vh;
+      }
+
+      .left-panel {
+        width: 88%;
+        clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+      }
+
+      .hero-content {
+        padding: 30px 20px 30px 24px;
+      }
+
       .footer-inner {
         flex-direction: column;
         align-items: flex-start;
@@ -1367,54 +1454,74 @@
         text-align: left;
       }
     }
+
+    @media (max-width: 640px) {
+      .outcomes-stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .focus-section-wrap,
+      .updates-shell {
+        padding: 20px 16px;
+      }
+
+      .brand-logo.iitb img {
+        width: 48px;
+        height: 48px;
+      }
+
+      .brand-logo.honeywell img {
+        width: 96px;
+      }
+    }
   </style>
 </head>
 <body>
 
- <header class="site-header">
-  <nav class="navbar" id="navbar">
-    <div class="nav-left">
-      <div class="brand-logo iitb">
-        <img loading="lazy" decoding="async" src="Image/IITB_logo.png" alt="IIT Bombay Logo">
-      </div>
-      <div class="brand-divider"></div>
-      <div class="brand-logo honeywell">
-        <img loading="lazy" decoding="async" src="Image/Honeywell_Logo.png" alt="Honeywell Logo">
-      </div>
-    </div>
-
-    <div class="nav-right">
-      <div class="nav-dropdown" id="homeDropdown">
-        <a href="index.html" class="nav-link dropdown-toggle" id="homeDropdownToggle">Home</a>
-        <div class="dropdown-menu">
-          <a href="index.html#about-centre">About the Centre</a>
-          <a href="index.html#our-focus">Focus Areas</a>
-          <a href="index.html#planned-outcomes">Planned Outcomes</a>
-          <a href="index.html#updates">Latest Updates</a>
-          <a href="index.html#contact-us">Contact Us</a>
+  <header class="site-header">
+    <nav class="navbar" id="navbar">
+      <div class="nav-left">
+        <div class="brand-logo iitb">
+          <img loading="lazy" decoding="async" src="Image/IITB_logo.png" alt="IIT Bombay Logo">
+        </div>
+        <div class="brand-divider"></div>
+        <div class="brand-logo honeywell">
+          <img loading="lazy" decoding="async" src="Image/Honeywell_Logo.png" alt="Honeywell Logo">
         </div>
       </div>
 
-      <a href="about.html" class="nav-link">About</a>
-      <a href="focus-area.html" class="nav-link">Focus Areas</a>
-      <a href="events.html" class="nav-link">Events</a>
-
-      <div class="nav-dropdown" id="faqDropdown">
-        <a href="javascript:void(0)" class="nav-link dropdown-toggle" id="faqDropdownToggle">FAQ</a>
-        <div class="dropdown-menu">
-          <a href="javascript:void(0)" onclick="openFAQ('skill')">Skill &amp; Knowledge Development</a>
-          <a href="javascript:void(0)" onclick="openFAQ('research')">Translational Research</a>
-          <a href="javascript:void(0)" onclick="openFAQ('fellowship')">Research Fellowship</a>
-          <a href="javascript:void(0)" onclick="openFAQ('innovation')">Innovation &amp; Incubation</a>
+      <div class="nav-right">
+        <div class="nav-dropdown" id="homeDropdown">
+          <a href="index.html" class="nav-link dropdown-toggle" id="homeDropdownToggle">Home</a>
+          <div class="dropdown-menu">
+            <a href="index.html#about-centre">About the Centre</a>
+            <a href="index.html#our-focus">Focus Areas</a>
+            <a href="index.html#planned-outcomes">Planned Outcomes</a>
+            <a href="index.html#updates">Latest Updates</a>
+            <a href="index.html#contact-us">Contact Us</a>
+          </div>
         </div>
+
+        <a href="about.html" class="nav-link">About</a>
+        <a href="focus-area.html" class="nav-link">Focus Areas</a>
+        <a href="events.html" class="nav-link">Events</a>
+
+        <div class="nav-dropdown" id="faqDropdown">
+          <a href="javascript:void(0)" class="nav-link dropdown-toggle" id="faqDropdownToggle">FAQ</a>
+          <div class="dropdown-menu">
+            <a href="javascript:void(0)" onclick="openFAQ('skill')">Skill &amp; Knowledge Development</a>
+            <a href="javascript:void(0)" onclick="openFAQ('research')">Translational Research</a>
+            <a href="javascript:void(0)" onclick="openFAQ('fellowship')">Research Fellowship</a>
+            <a href="javascript:void(0)" onclick="openFAQ('innovation')">Innovation &amp; Incubation</a>
+          </div>
+        </div>
+
+        <a href="contact.html" class="nav-link">Contact</a>
       </div>
 
-      <a href="contact.html" class="nav-link">Contact</a>
-    </div>
-
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
-  </nav>
-</header>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+    </nav>
+  </header>
 
   <section class="hero-slider" id="home">
     <div class="slides" id="slides">
@@ -1514,19 +1621,17 @@
   </section>
 
   <section class="intro-video-section reveal" id="about-centre">
-    
-<div class="intro-media">
-  <iframe
-    width="100%"
-    height="100%"
-    src="https://www.youtube.com/embed/I93loBTYTfU?si=Hi1CE4DpbLHp0ZTA"
-    title="IIT Bombay-Honeywell Centre for Future Skills & Innovation"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    referrerpolicy="strict-origin-when-cross-origin"
-    allowfullscreen>
-  </iframe>
-</div>
+    <div class="intro-video-container">
+      <div class="intro-media">
+        <iframe
+          src="https://www.youtube.com/embed/I93loBTYTfU?si=Hi1CE4DpbLHp0ZTA"
+          title="IIT Bombay-Honeywell Centre for Future Skills & Innovation"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+      </div>
+
       <div class="intro-content">
         <h2 class="intro-heading two-tone-title">About <span>the Centre</span></h2>
         <p class="intro-text">
@@ -1555,12 +1660,8 @@
             <img loading="lazy" decoding="async" src="icons/book.svg" alt="Skill and Knowledge Development">
           </div>
           <h3>Skill &amp; Knowledge Development</h3>
-          <p>
-            Deliver expert-led sustainability learning pathways to build future-ready talent.
-          </p>
-          <button class="focus-readmore-btn" id="focusBtn1" onclick="showFocusDetail(1)">
-            See More
-          </button>
+          <p>Deliver expert-led sustainability learning pathways to build future-ready talent.</p>
+          <button class="focus-readmore-btn" id="focusBtn1" onclick="showFocusDetail(1)">See More</button>
         </div>
 
         <div class="focus-card">
@@ -1568,12 +1669,8 @@
             <img loading="lazy" decoding="async" src="icons/research.svg" alt="Translational Research">
           </div>
           <h3>Translational Research</h3>
-          <p>
-            Conduct applied research focused on sustainability challenges and practical outcomes.
-          </p>
-          <button class="focus-readmore-btn" id="focusBtn2" onclick="showFocusDetail(2)">
-            See More
-          </button>
+          <p>Conduct applied research focused on sustainability challenges and practical outcomes.</p>
+          <button class="focus-readmore-btn" id="focusBtn2" onclick="showFocusDetail(2)">See More</button>
         </div>
 
         <div class="focus-card">
@@ -1581,12 +1678,8 @@
             <img loading="lazy" decoding="async" src="icons/rocket.png" alt="Innovation and Incubation">
           </div>
           <h3>Innovation &amp; Incubation</h3>
-          <p>
-            Support ideas, startups, and collaborations through a strong innovation ecosystem.
-          </p>
-          <button class="focus-readmore-btn" id="focusBtn3" onclick="showFocusDetail(3)">
-            See More
-          </button>
+          <p>Support ideas, startups, and collaborations through a strong innovation ecosystem.</p>
+          <button class="focus-readmore-btn" id="focusBtn3" onclick="showFocusDetail(3)">See More</button>
         </div>
 
         <div class="focus-card">
@@ -1594,12 +1687,8 @@
             <img loading="lazy" decoding="async" src="icons/handshake.jpg" alt="Research Fellowships">
           </div>
           <h3>Research Fellowships</h3>
-          <p>
-            Enable fellows to contribute to research, training, outreach, and interdisciplinary work.
-          </p>
-          <button class="focus-readmore-btn" id="focusBtn4" onclick="showFocusDetail(4)">
-            See More
-          </button>
+          <p>Enable fellows to contribute to research, training, outreach, and interdisciplinary work.</p>
+          <button class="focus-readmore-btn" id="focusBtn4" onclick="showFocusDetail(4)">See More</button>
         </div>
       </div>
 
@@ -1845,7 +1934,6 @@
         Last Updated: April 2026
       </div>
     </div>
-
   </footer>
 
   <script>
@@ -2208,7 +2296,6 @@
       }
     });
 
-
     const currentPage = window.location.pathname.split("/").pop() || "index.html";
     document.querySelectorAll(".nav-link").forEach(link => {
       const href = link.getAttribute("href");
@@ -2227,24 +2314,6 @@
         month: "long",
         year: "numeric"
       });
-      const links = document.querySelectorAll(".nav-link");
-const current = window.location.pathname.split("/").pop();
-
-links.forEach(link => {
-  if(link.getAttribute("href") === current){
-    link.classList.add("active");
-  }
-});
   </script>
-  <script>
-  const toggle = document.querySelector(".menu-toggle");
-  const body = document.body;
-
-  if (toggle) {
-    toggle.addEventListener("click", () => {
-      body.classList.toggle("mobile-nav-open");
-    });
-  }
-</script>
 </body>
 </html>
