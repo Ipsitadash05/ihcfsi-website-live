@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore the focus areas of the IIT Bombay-Honeywell Centre for Future Skills & Innovation." />
+  <meta name="theme-color" content="#003366" />
+  <link rel="icon" type="image/png" href="Image/IITB_logo.png" />
+  <title>Focus Area | IIT Bombay-Honeywell Centre for Future Skills & Innovation</title>
+<style>
+    :root {
+      --white: #ffffff;
+      --off-white: #f8fbfd;
+      --soft-bg: #f4f8fb;
+      --iit-blue: #003366;
+      --iit-blue-dark: #00264d;
+      --accent-teal: #00a8a8;
+      --menu-hover-bg: #e8f7f7;
+      --primary-text: #18324a;
+      --secondary-text: #506273;
+      --muted-line: rgba(0, 51, 102, 0.08);
+
+      --blue-tone: #4f7dbb;
+      --red-tone: #c7524c;
+      --green-tone: #95b84d;
+      --purple-tone: #7d63a8;
+
+      --shadow-soft: 0 14px 40px rgba(9, 44, 76, 0.06);
+      --shadow-image: 0 18px 45px rgba(9, 44, 76, 0.12);
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --contact-gold: #f4c542;
+      --transition: 0.28s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at top left, rgba(0, 168, 168, 0.05), transparent 26%),
+        radial-gradient(circle at bottom right, rgba(149, 184, 77, 0.07), transparent 24%),
+        linear-gradient(180deg, #ffffff 0%, #f8fbfd 100%);
+      color: var(--primary-text);
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(0, 51, 102, 0.07);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+    }
+
+    .navbar {
+      max-width: 1440px;
+      margin: 0 auto;
+      min-height: 84px;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-shrink: 0;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .brand-logo.iitb img {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .brand-logo.honeywell img {
+      width: 112px;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .brand-divider {
+      width: 1px;
+      height: 44px;
+      background: rgba(0, 51, 102, 0.15);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-link {
+      color: var(--iit-blue);
+      font-size: 0.97rem;
+      font-weight: 600;
+      padding: 10px 14px;
+      border-radius: 999px;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .nav-link:hover {
+      background: var(--menu-hover-bg);
+      color: var(--accent-teal);
+    }
+
+    .nav-link.active {
+      background: linear-gradient(135deg, var(--accent-teal), #0bbcbc);
+      color: #ffffff;
+      box-shadow: 0 8px 18px rgba(0, 168, 168, 0.18);
+    }
+
+    .nav-dropdown {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .dropdown-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .dropdown-toggle::after {
+      content: "▾";
+      font-size: 0.72rem;
+      margin-top: 1px;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      min-width: 270px;
+      background: #ffffff;
+      border: 1px solid rgba(0, 51, 102, 0.08);
+      border-radius: 12px;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.10);
+      padding: 8px 0;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: 0.25s ease;
+      z-index: 1200;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 12px 16px;
+      font-size: 0.94rem;
+      font-weight: 600;
+      color: var(--iit-blue);
+      transition: 0.22s ease;
+      border-radius: 0;
+      cursor: pointer;
+    }
+
+    .dropdown-menu a:hover {
+      background: rgba(0, 168, 168, 0.08);
+      color: var(--accent-teal);
+    }
+
+    .nav-dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .menu-toggle {
+      display: none;
+      margin-left: auto;
+      border: none;
+      background: transparent;
+      color: var(--iit-blue);
+      font-size: 1.9rem;
+      cursor: pointer;
+    }
+
+    .focus-zigzag-section {
+      padding: 70px 24px 90px;
+    }
+
+    .focus-zigzag-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 72px;
+    }
+
+    .focus-zigzag-row {
+      display: grid;
+      grid-template-columns: minmax(320px, 540px) minmax(320px, 1fr);
+      gap: 72px;
+      align-items: center;
+      position: relative;
+    }
+
+    .focus-zigzag-row::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -36px;
+      transform: translateX(-50%);
+      width: 85%;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(0, 51, 102, 0.08) 20%,
+        rgba(0, 51, 102, 0.08) 80%,
+        transparent 100%
+      );
+    }
+
+    .focus-zigzag-row:last-child::after {
+      display: none;
+    }
+
+    .focus-zigzag-image {
+      position: relative;
+    }
+
+    .focus-zigzag-image::before {
+      content: "";
+      position: absolute;
+      inset: auto auto -16px -16px;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(0, 168, 168, 0.08), rgba(149, 184, 77, 0.1));
+      border-radius: 28px;
+      z-index: 0;
+    }
+
+    .focus-zigzag-image img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 390px;
+      object-fit: cover;
+      display: block;
+      border-radius: 28px;
+      box-shadow: var(--shadow-image);
+    }
+
+    .focus-zigzag-text {
+      max-width: 560px;
+    }
+
+    .focus-zigzag-text h2 {
+      font-size: clamp(1.9rem, 2.5vw, 2.55rem);
+      line-height: 1.15;
+      margin-bottom: 18px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .focus-zigzag-text p {
+      font-size: 1.1rem;
+      line-height: 1.95;
+      color: var(--secondary-text);
+      font-weight: 400;
+    }
+
+    .blue-text { color: var(--blue-tone); }
+    .red-text { color: var(--red-tone); }
+    .green-text { color: var(--green-tone); }
+    .purple-text { color: var(--purple-tone); }
+
+    #contact-us {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, #eef5fa 0%, #dfeaf3 100%);
+      padding: 30px 20px;
+    }
+
+    #contact-us::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top left, rgba(0, 168, 168, 0.06), transparent 24%),
+        radial-gradient(circle at bottom right, rgba(0, 51, 102, 0.05), transparent 24%);
+      pointer-events: none;
+    }
+
+    .contact-title-wrap {
+      max-width: 1280px;
+      margin: 0 auto 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      color: var(--iit-blue-dark);
+      margin-bottom: 4px;
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.4px;
+    }
+
+    .section-title span {
+      color: var(--accent-teal);
+    }
+
+    .section-text {
+      font-size: 0.98rem;
+      line-height: 1.68;
+      color: var(--secondary-text);
+      max-width: 980px;
+    }
+
+    .contact-wrap {
+      max-width: 1280px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.05fr 0.9fr 1fr;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 14px 30px rgba(0, 51, 102, 0.08);
+      border: 1px solid rgba(0, 51, 102, 0.08);
+      background: var(--white);
+    }
+
+    .contact-panel {
+      min-height: 330px;
+    }
+
+    .contact-form-panel {
+      background: #ffffff;
+      padding: 22px 20px;
+    }
+
+    .contact-info-panel {
+      background: linear-gradient(180deg, #142b44 0%, #10263d 100%);
+      color: #ffffff;
+      padding: 22px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .contact-map-panel {
+      min-height: 330px;
+      background: #d8e4ef;
+    }
+
+    .contact-map-panel iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 330px;
+      border: 0;
+      display: block;
+    }
+
+    .contact-form-heading {
+      font-size: 1.75rem;
+      color: #111111;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 14px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .contact-field label {
+      display: block;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: #444;
+      margin-bottom: 6px;
+    }
+
+    .contact-input,
+    .contact-textarea {
+      width: 100%;
+      border: none;
+      border-bottom: 2px solid rgba(0, 0, 0, 0.28);
+      background: transparent;
+      font-size: 0.96rem;
+      padding: 6px 2px 8px;
+      color: #222;
+      outline: none;
+      transition: 0.2s ease;
+    }
+
+    .contact-input:focus,
+    .contact-textarea:focus {
+      border-bottom-color: var(--accent-teal);
+    }
+
+    .contact-input::placeholder,
+    .contact-textarea::placeholder {
+      color: #9b9b9b;
+    }
+
+    .contact-textarea {
+      min-height: 82px;
+      resize: vertical;
+    }
+
+    .contact-checkbox {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      color: #707070;
+      margin-top: 2px;
+    }
+
+    .contact-submit-btn {
+      width: 100%;
+      margin-top: 4px;
+      background: var(--contact-gold);
+      color: #1d1d1d;
+      border-radius: 0;
+      font-weight: 800;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      padding: 11px 16px;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .contact-submit-btn:hover {
+      background: #e5b832;
+      color: #111;
+    }
+
+    .contact-info-block + .contact-info-block {
+      margin-top: 12px;
+    }
+
+    .contact-info-heading {
+      color: var(--contact-gold);
+      font-size: 0.95rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .contact-info-text {
+      font-size: 0.93rem;
+      line-height: 1.58;
+      color: rgba(255,255,255,0.92);
+      word-break: break-word;
+    }
+
+    .contact-info-text a {
+      color: var(--contact-gold);
+      font-weight: 700;
+    }
+
+    .contact-info-text a:hover {
+      color: #ffffff;
+    }
+
+    .faq-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.58);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      z-index: 3000;
+    }
+
+    .faq-modal.show {
+      display: flex;
+    }
+
+    .faq-content {
+      width: min(900px, 100%);
+      max-height: 88vh;
+      overflow-y: auto;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.18);
+      padding: 28px 24px 24px;
+      position: relative;
+    }
+
+    .faq-close {
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      font-size: 30px;
+      line-height: 1;
+      cursor: pointer;
+      color: var(--iit-blue);
+      transition: 0.2s ease;
+    }
+
+    .faq-close:hover {
+      color: var(--accent-teal);
+      transform: scale(1.08);
+    }
+
+    .faq-modal-title {
+      font-size: 2rem;
+      color: var(--iit-blue-dark);
+      margin-bottom: 18px;
+      font-weight: 800;
+      padding-right: 36px;
+    }
+
+    .faq-item {
+      border: 1px solid rgba(0, 51, 102, 0.08);
+      border-radius: 14px;
+      padding: 18px 18px 16px;
+      background: #ffffff;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+    }
+
+    .faq-item + .faq-item {
+      margin-top: 14px;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      line-height: 1.6;
+      font-weight: 700;
+      color: var(--iit-blue);
+      margin-bottom: 8px;
+    }
+
+    .faq-answer {
+      font-size: 0.97rem;
+      line-height: 1.8;
+      color: var(--secondary-text);
+    }
+
+    .site-footer {
+      background: #003366;
+      color: #ffffff;
+      padding: 16px 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .footer-left,
+    .footer-right {
+      color: rgba(255, 255, 255, 0.92);
+      font-weight: 500;
+    }
+
+    .footer-right {
+      text-align: right;
+    }
+
+    @media (max-width: 1100px) {
+      .focus-zigzag-row {
+        gap: 48px;
+      }
+
+      .focus-zigzag-image img {
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .navbar {
+        min-height: 78px;
+        padding: 12px 20px;
+        flex-wrap: wrap;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-right {
+        display: none;
+        width: 100%;
+        justify-content: center;
+        padding-top: 10px;
+        gap: 14px 18px;
+      }
+
+      .mobile-nav-open .nav-right {
+        display: flex;
+      }
+
+      .nav-dropdown {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        min-width: 100%;
+        margin-top: 8px;
+        display: none;
+        box-shadow: none;
+        border-radius: 12px;
+      }
+
+      .nav-dropdown.open .dropdown-menu {
+        display: block;
+      }
+
+      .focus-zigzag-container {
+        gap: 56px;
+      }
+
+      .focus-zigzag-row {
+        grid-template-columns: 1fr;
+        gap: 26px;
+      }
+
+      .focus-zigzag-row::after {
+        bottom: -28px;
+        width: 100%;
+      }
+
+      .focus-zigzag-row.reverse .focus-zigzag-text {
+        order: 1;
+      }
+
+      .focus-zigzag-row.reverse .focus-zigzag-image {
+        order: 2;
+      }
+
+      .focus-zigzag-text {
+        max-width: 100%;
+      }
+
+      .focus-zigzag-image img {
+        height: 320px;
+      }
+
+      .contact-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-panel,
+      .contact-map-panel,
+      .contact-map-panel iframe {
+        min-height: auto;
+      }
+
+      .contact-map-panel iframe {
+        height: 300px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-right {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .brand-logo.iitb img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .brand-logo.honeywell img {
+        width: 78px;
+      }
+
+      .brand-divider {
+        height: 34px;
+      }
+
+      .navbar {
+        gap: 12px;
+      }
+
+      .nav-link {
+        font-size: 0.92rem;
+      }
+
+      .focus-zigzag-section {
+        padding: 48px 18px 70px;
+      }
+
+      .focus-zigzag-container {
+        gap: 48px;
+      }
+
+      .focus-zigzag-row::after {
+        bottom: -24px;
+      }
+
+      .focus-zigzag-image::before {
+        bottom: -10px;
+        left: -10px;
+        border-radius: 18px;
+      }
+
+      .focus-zigzag-image img {
+        height: 240px;
+        border-radius: 18px;
+      }
+
+      .focus-zigzag-text h2 {
+        font-size: 1.55rem;
+        margin-bottom: 14px;
+      }
+
+      .focus-zigzag-text p {
+        font-size: 0.99rem;
+        line-height: 1.78;
+      }
+
+      .contact-title-wrap {
+        margin-bottom: 8px;
+      }
+
+      .contact-form-heading {
+        font-size: 1.5rem;
+      }
+
+      .contact-form-panel,
+      .contact-info-panel {
+        padding: 18px 16px;
+      }
+
+      .contact-map-panel iframe {
+        height: 220px;
+      }
+
+      .faq-content {
+        padding: 22px 16px 18px;
+      }
+
+      .faq-modal-title {
+        font-size: 1.55rem;
+      }
+
+      .site-footer {
+        padding: 14px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+  <nav class="navbar" id="navbar">
+    <div class="nav-left">
+      <div class="brand-logo iitb">
+        <img loading="lazy" decoding="async" src="Image/IITB_logo.png" alt="IIT Bombay Logo">
+      </div>
+      <div class="brand-divider"></div>
+      <div class="brand-logo honeywell">
+        <img loading="lazy" decoding="async" src="Image/Honeywell_Logo.png" alt="Honeywell Logo">
+      </div>
+    </div>
+
+    <div class="nav-right">
+      <div class="nav-dropdown" id="homeDropdown">
+        <a href="index.html" class="nav-link dropdown-toggle" id="homeDropdownToggle">Home</a>
+        <div class="dropdown-menu">
+          <a href="index.html#about-centre">About the Centre</a>
+          <a href="index.html#our-focus">Focus Areas</a>
+          <a href="index.html#planned-outcomes">Planned Outcomes</a>
+          <a href="index.html#updates">Latest Updates</a>
+          <a href="index.html#contact-us">Contact Us</a>
+        </div>
+      </div>
+
+      <a href="about.html" class="nav-link">About</a>
+
+      <div class="nav-dropdown" id="focusDropdown">
+        <a href="focus-area.html" class="nav-link active dropdown-toggle" id="focusDropdownToggle">Focus Areas</a>
+        <div class="dropdown-menu">
+          <a href="#skill-development">Skill &amp; Knowledge Development</a>
+          <a href="#translational-research">Translational Research</a>
+          <a href="#innovation-incubation">Innovation &amp; Incubation</a>
+          <a href="#research-fellowships">Research Fellowships</a>
+        </div>
+      </div>
+
+      <a href="events.html" class="nav-link">Events</a>
+
+      <div class="nav-dropdown" id="faqDropdown">
+        <a href="javascript:void(0)" class="nav-link dropdown-toggle" id="faqDropdownToggle">FAQ</a>
+        <div class="dropdown-menu">
+          <a href="javascript:void(0)" onclick="openFAQ('skill')">Skill &amp; Knowledge Development</a>
+          <a href="javascript:void(0)" onclick="openFAQ('research')">Translational Research</a>
+          <a href="javascript:void(0)" onclick="openFAQ('fellowship')">Research Fellowship</a>
+          <a href="javascript:void(0)" onclick="openFAQ('innovation')">Innovation &amp; Incubation</a>
+        </div>
+      </div>
+
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+  </nav>
+</header>
+  <section class="focus-zigzag-section">
+    <div class="focus-zigzag-container">
+
+      <div class="focus-zigzag-row" id="skill-development">
+        <div class="focus-zigzag-image">
+          <img loading="lazy" decoding="async" src="Image/online_learning.jpeg" alt="Skill and Knowledge Development">
+        </div>
+        <div class="focus-zigzag-text">
+          <h2 class="blue-text">Skill &amp; Knowledge Development</h2>
+          <p>
+            Deliver expert-led sustainability courses to over 1 lakh learners,
+            building talent and sustainability-driven mindsets at scale. The Centre
+            offers structured learning pathways, hands-on workshops, and interdisciplinary
+            programmes that equip learners with future-ready skills aligned with evolving
+            industry and sustainability needs.
+          </p>
+        </div>
+      </div>
+
+      <div class="focus-zigzag-row reverse" id="translational-research">
+        <div class="focus-zigzag-text">
+          <h2 class="red-text">Translational Research</h2>
+          <p>
+            Conduct applied, field-relevant research through research
+            projects focused on contemporary sustainability challenges.
+            These initiatives bridge the gap between academic research and real-world
+            implementation by enabling collaborative problem-solving, data-driven insights,
+            and scalable solutions across sectors.
+          </p>
+        </div>
+        <div class="focus-zigzag-image">
+          <img loading="lazy" decoding="async" src="Image/Translational.jpeg" alt="Translational Research">
+        </div>
+      </div>
+
+      <div class="focus-zigzag-row" id="innovation-incubation">
+        <div class="focus-zigzag-image">
+          <img loading="lazy" decoding="async" src="Image/innovation.jpeg" alt="Innovation and Incubation">
+        </div>
+        <div class="focus-zigzag-text">
+          <h2 class="green-text">Innovation &amp; Incubation</h2>
+          <p>
+            Convene national innovation forums to connect students, researchers,
+            industry, and policymakers around sustainability challenges. Support
+            high-potential innovations for startups with mentorship and seed funding
+            to turn ideas into scalable solutions.
+          </p>
+        </div>
+      </div>
+
+      <div class="focus-zigzag-row reverse" id="research-fellowships">
+        <div class="focus-zigzag-text">
+          <h2 class="purple-text">Research Fellowships</h2>
+          <p>
+            To be awarded to fellows who will actively contribute to the Centre’s
+            research, training, and outreach components while building their own capacities
+            in interdisciplinary sustainability leadership.
+          </p>
+        </div>
+        <div class="focus-zigzag-image">
+          <img loading="lazy" decoding="async" src="Image/research(2).png" alt="Research Fellowships">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact-us">
+    <div class="contact-title-wrap">
+      <h2 class="section-title">Contact <span>Us</span></h2>
+      <p class="section-text">
+        Reach out for collaborations, programs, fellowships, partnerships, and enquiries.
+      </p>
+    </div>
+
+    <div class="contact-wrap">
+      <div class="contact-panel contact-form-panel">
+        <h3 class="contact-form-heading">Get in Touch</h3>
+
+        <form
+          class="contact-form"
+          action="https://formsubmit.co/office.ihcfsi@iitb.ac.in"
+          method="POST"
+        >
+          <input type="hidden" name="_subject" value="New enquiry from IIT Bombay-Honeywell Centre website">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_autoresponse" value="Thank you for contacting the IIT Bombay-Honeywell Centre for Future Skills and Innovation. We have received your message and will get back to you soon.">
+          <input type="text" name="_honey" style="display:none">
+
+          <div class="contact-field">
+            <label for="name">Name</label>
+            <input id="name" name="name" class="contact-input" type="text" placeholder="Enter your name" required />
+          </div>
+
+          <div class="contact-field">
+            <label for="email">Email</label>
+            <input id="email" name="email" class="contact-input" type="email" placeholder="Enter your email" required />
+          </div>
+
+          <div class="contact-field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" class="contact-textarea" placeholder="Write your message" required></textarea>
+          </div>
+
+          <label class="contact-checkbox">
+            <input type="checkbox" name="consent" required />
+            <span>I accept the Terms of Service</span>
+          </label>
+
+          <button type="submit" class="contact-submit-btn">Submit</button>
+        </form>
+      </div>
+
+      <div class="contact-panel contact-info-panel">
+        <div class="contact-info-block">
+          <h4 class="contact-info-heading">Email</h4>
+          <p class="contact-info-text">office.ihcfsi@iitb.ac.in</p>
+        </div>
+
+        <div class="contact-info-block">
+          <h4 class="contact-info-heading">Address</h4>
+          <p class="contact-info-text">
+            1st Floor, AMAT Lab, IIT Bombay,<br>
+            Powai, Mumbai, Maharashtra 400076
+          </p>
+        </div>
+
+        <div class="contact-info-block">
+          <h4 class="contact-info-heading">Phone</h4>
+          <p class="contact-info-text">+91-22-25766478</p>
+        </div>
+
+        <div class="contact-info-block">
+          <h4 class="contact-info-heading">LinkedIn</h4>
+          <p class="contact-info-text">
+            <a href="https://www.linkedin.com/company/ihcfsi/" target="_blank" rel="noopener noreferrer">Visit LinkedIn</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="contact-panel contact-map-panel">
+        <iframe
+          src="https://www.google.com/maps?q=2B-20,%20Hillside%20Rd,%20IIT%20Area,%20Powai,%20Mumbai,%20Maharashtra%20400076&z=17&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="IIT Bombay-Honeywell Centre Location">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <div id="faqModal" class="faq-modal">
+    <div class="faq-content">
+      <span class="faq-close" onclick="closeFAQ()">&times;</span>
+      <h2 id="faqTitle" class="faq-modal-title"></h2>
+      <div id="faqBody"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        © 2026 IIT Bombay-Honeywell Centre for Future Skills &amp; Innovation. All Rights Reserved.
+      </div>
+      <div class="footer-right" id="lastUpdatedText">
+        Last Updated: April 2026
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navbar = document.getElementById("navbar");
+    const focusDropdown = document.getElementById("focusDropdown");
+    const focusDropdownToggle = document.getElementById("focusDropdownToggle");
+    const faqDropdown = document.getElementById("faqDropdown");
+    const faqDropdownToggle = document.getElementById("faqDropdownToggle");
+
+    menuToggle.addEventListener("click", () => {
+      navbar.classList.toggle("mobile-nav-open");
+    });
+
+    if (focusDropdownToggle && focusDropdown) {
+      focusDropdownToggle.addEventListener("click", function (e) {
+        if (window.innerWidth <= 992) {
+          e.preventDefault();
+          focusDropdown.classList.toggle("open");
+        }
+      });
+    }
+
+    if (faqDropdownToggle && faqDropdown) {
+      faqDropdownToggle.addEventListener("click", function (e) {
+        if (window.innerWidth <= 992) {
+          e.preventDefault();
+          faqDropdown.classList.toggle("open");
+        }
+      });
+    }
+
+    const faqData = {
+      skill: {
+        title: "Skill & Knowledge Development",
+        items: [
+          {
+            q: "1. What is the Certificate Programme in Sustainability?",
+            a: "It is a short certificate programme delivered by expert faculty of IIT Bombay and a few experienced practitioners from respective domains that introduce students to key concepts in sustainability, environmental management, and responsible development, aligning to sustainable development goals."
+          },
+          {
+            q: "2. Why enroll in the Certificate Programme in Sustainability?",
+            a: "The programme is designed to develop both foundational and applied knowledge in sustainability, enabling students to engage in contemporary environmental, social, and economic challenges. It will help in developing critical thinking, interdisciplinary learning, and practical skills aligned with evolving academic and industry standards, while also preparing them to tackle real-world issues and enhance their prospects for future studies and career opportunities."
+          },
+          {
+            q: "3. Who is eligible to enroll?",
+            a: "3rd year students enrolled in a 3 year undergraduate degree, and 3rd and 4th year students in a 4 year and 4+ year degree from any discipline."
+          },
+          {
+            q: "4. Is there a course fee?",
+            a: "No, the fee is waived off through IIT Bombay-Honeywell Centre of Excellence for Future Skills and Innovation for limited students across India and will be opted on a first come basis."
+          },
+          {
+            q: "5. How do I earn a certificate?",
+            a: "To earn a certificate, a minimum of 5 courses need to be completed including 3 compulsory core courses and any 2 electives from a basket of 12 courses."
+          },
+          {
+            q: "6. Can I take more electives?",
+            a: "Yes, additional electives are allowed to be taken through separate requests with proper justification, and for the additional courses no additional certificate will be provided."
+          },
+          {
+            q: "7. How to access the courses?",
+            a: "All courses are going to be delivered in online mode. After enrolment verification, the students will be provided with access to the course portal with a login ID and password."
+          },
+          {
+            q: "8. How do I apply?",
+            a: "Scan the QR code on the programme poster and fill out the registration form, or register for the course on the LMS platform directly."
+          },
+          {
+            q: "9. Is there a selection process?",
+            a: "Yes, applications will be reviewed after the registration form is filled and only eligible students will get access to these courses."
+          },
+          {
+            q: "10. Can students from all academic backgrounds apply?",
+            a: "Yes, the programme is open to all disciplines of any degree program."
+          },
+          {
+            q: "11. Are there any prerequisites for the course?",
+            a: "No prerequisites are needed for registering for the certificate programme."
+          },
+          {
+            q: "12. How will this programme help my career?",
+            a: "The certificate programme will help build understanding and skills in sustainability which are very much in demand for the environmental, policy, and corporate sectors. Additionally, these will be useful in addressing various challenges in day-to-day life."
+          },
+          {
+            q: "13. What is the duration of the certificate programme?",
+            a: "For 3-year and 4-year undergraduate programmes: Final-year students: up to 6 months after completing their degree. Pre-final year students: until the completion of their degree. For 4-year+ undergraduate programmes: 3rd year students: until the end of the 4th year. 4th year students: until the end of the 5th year or completion of degree, whichever is earlier."
+          },
+          {
+            q: "14. What is the process of course assessment?",
+            a: "The assessments may include assignments, projects, or quizzes, which are part of online modules. There won't be any physical written or oral examinations."
+          },
+          {
+            q: "15. Can I get academic credit?",
+            a: "No academic credits will be given for this certificate programme."
+          },
+          {
+            q: "16. What if I have any queries?",
+            a: "A dedicated online forum or platform will be provided to address students' queries related to technical challenges in the program. In addition, students may submit their questions through a Google Form, and responses will be provided by the instructors and program coordinators."
+          }
+        ]
+      },
+
+      research: {
+        title: "Translational Research",
+        items: [
+          {
+            q: "1. Who is eligible to apply for the research projects?",
+            a: "The research projects are open only to full time faculty members of IIT Bombay."
+          },
+          {
+            q: "2. Is there any specific requirement for the research projects?",
+            a: "Each project needs to have an external stakeholder as a partner."
+          },
+          {
+            q: "3. How many research projects shall be funded under the Centre of Excellence?",
+            a: "Over five years, 15 students will be selected under the Centre of Excellence, with 2 members already onboard."
+          },
+          {
+            q: "4. What are the duration of the projects?",
+            a: "The projects duration is for a 2 year period with scope of further extension for one more year."
+          }
+        ]
+      },
+
+      fellowship: {
+        title: "Research Fellowship",
+        items: [
+          {
+            q: "1. Who are eligible to apply for the research fellowships?",
+            a: "The research fellowship is open only to full time M.Tech and PhD students of IIT Bombay. The students must be working in the area of sustainability and the work needs to be aligned to the centre’s focus areas."
+          },
+          {
+            q: "2. How many fellowships are available?",
+            a: "A total of 15 students will be selected under the Centre of Excellence over the period of five years."
+          }
+        ]
+      },
+
+      innovation: {
+        title: "Innovation & Incubation",
+        items: [
+          {
+            q: "1. What is the Sustainability Innovation Challenge?",
+            a: "The Sustainability Innovation Challenge is an all India hackathon where teams working in any area related to sustainability can take part and compete for incubation support."
+          },
+          {
+            q: "2. How many teams will get incubation support?",
+            a: "Incubation support will be provided to the winner of the hackathon and the team will get the opportunity to get the start-up incubated at SINE, IIT Bombay."
+          },
+          {
+            q: "3. What is the financial support received by the winners?",
+            a: "The winning team will get the seed funding for the start-up incubation at SINE, IIT Bombay."
+          },
+          {
+            q: "4. What is the maximum team size of the teams taking part in the hackathon?",
+            a: "The team size can vary from 3 to 5 members in each team. Collaborative and interdisciplinary teams are encouraged."
+          }
+        ]
+      }
+    };
+
+    function openFAQ(type) {
+      const modal = document.getElementById("faqModal");
+      const title = document.getElementById("faqTitle");
+      const body = document.getElementById("faqBody");
+      const data = faqData[type];
+
+      if (!data) return;
+
+      title.textContent = data.title;
+      body.innerHTML = data.items.map(item => `
+        <div class="faq-item">
+          <div class="faq-question">${item.q}</div>
+          <div class="faq-answer">${item.a}</div>
+        </div>
+      `).join("");
+
+      modal.classList.add("show");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeFAQ() {
+      document.getElementById("faqModal").classList.remove("show");
+      document.body.style.overflow = "";
+    }
+
+    window.addEventListener("click", function(e) {
+      const modal = document.getElementById("faqModal");
+      if (e.target === modal) {
+        closeFAQ();
+      }
+    });
+
+    document.addEventListener("keydown", function(e) {
+      if (e.key === "Escape") {
+        closeFAQ();
+      }
+    });
+
+    const lastUpdatedEl = document.getElementById("lastUpdatedText");
+    if (lastUpdatedEl) {
+      lastUpdatedEl.textContent =
+        "Last Updated: " + new Date(document.lastModified).toLocaleDateString("en-GB", {
+          day: "2-digit",
+          month: "long",
+          year: "numeric"
+        });
+    }
+    const links = document.querySelectorAll(".nav-link");
+const current = window.location.pathname.split("/").pop();
+
+links.forEach(link => {
+  if(link.getAttribute("href") === current){
+    link.classList.add("active");
+  }
+});
+  </script>
+<script>
+  const toggle = document.querySelector(".menu-toggle");
+  const body = document.body;
+
+  if (toggle) {
+    toggle.addEventListener("click", () => {
+      body.classList.toggle("mobile-nav-open");
+    });
+  }
+</script>
+</body>
+</html>
