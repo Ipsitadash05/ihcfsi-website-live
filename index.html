@@ -1474,6 +1474,52 @@
         width: 96px;
       }
     }
+    /* Force About section two-column layout */
+#about-centre .intro-video-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 24px !important;
+  flex-wrap: nowrap !important;
+}
+
+#about-centre .intro-media,
+#about-centre .intro-content {
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+}
+
+#about-centre .intro-media {
+  max-width: 54% !important;
+}
+
+#about-centre .intro-content {
+  max-width: 46% !important;
+}
+
+#about-centre .intro-media iframe {
+  width: 100% !important;
+  height: 460px !important;
+  display: block !important;
+  border: 0 !important;
+  border-radius: 0 52px 0 52px !important;
+}
+
+@media (max-width: 992px) {
+  #about-centre .intro-video-container {
+    flex-wrap: wrap !important;
+  }
+
+  #about-centre .intro-media,
+  #about-centre .intro-content {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  #about-centre .intro-media iframe {
+    height: 320px !important;
+  }
+}
   </style>
 </head>
 <body>
